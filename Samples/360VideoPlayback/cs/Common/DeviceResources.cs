@@ -117,12 +117,13 @@ namespace _360VideoPlayback.Common
                 using (var dxgiFactory4 = new SharpDX.DXGI.Factory4())
                 {
                     // Retrieve the adapter specified by the holographic space.
-                    IntPtr adapterPtr;
-                    dxgiFactory4.EnumAdapterByLuid((long)id, InteropStatics.IDXGIAdapter3, out adapterPtr);
+                    //IntPtr adapterPtr;
+                    //dxgiFactory4.EnumAdapterByLuid((long)id, InteropStatics.IDXGIAdapter3, out adapterPtr);
 
-                    if (adapterPtr != IntPtr.Zero)
+                    //if (adapterPtr != IntPtr.Zero)
                     {
-                        dxgiAdapter = new SharpDX.DXGI.Adapter3(adapterPtr);
+                        //dxgiAdapter = new SharpDX.DXGI.Adapter3(adapterPtr);
+                        dxgiAdapter = (SharpDX.DXGI.Adapter3)dxgiFactory4.GetAdapterByLuid((long)id);
                     }
                 }
             }
